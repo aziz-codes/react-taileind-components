@@ -1,15 +1,14 @@
 import React from "react";
 
-const Input = ({ handleFocus, handleBlur, value }) => {
+const Input = ({ selected }) => {
   return (
     <input
       type="text"
-      placeholder={value}
-      defaultValue={value}
+      placeholder={selected}
+      value={selected}
       className="h-full w-full rounded-md outline-none
-  focus:outline-none"
-      onFocus={handleFocus}
-      onBlur={handleBlur}
+  focus:outline-none "
+      readOnly
     />
   );
 };

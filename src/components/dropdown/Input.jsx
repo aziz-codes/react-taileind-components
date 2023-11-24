@@ -5,7 +5,7 @@ const Input = ({ handleFocus, handleBlur, value }) => {
     <input
       type="text"
       placeholder={value}
-      value={value}
+      defaultValue={value}
       className="h-full w-full rounded-md outline-none
   focus:outline-none"
       onFocus={handleFocus}

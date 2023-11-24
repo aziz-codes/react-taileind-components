@@ -3,7 +3,7 @@ import Input from "./Input";
 import { languages } from "./dummy";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 const DropDown = () => {
-  const [focused, setFocused] = useState(true);
+  const [focused, setFocused] = useState(false);
   const [value, setValue] = useState("");
   const handleFocus = () => {
     setFocused(true);

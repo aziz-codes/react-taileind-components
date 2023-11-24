@@ -1,6 +1,7 @@
 import React from "react";
+import DropDown from "./components/dropdown/DropDown";
 
 const App = () => {
-  return <div className="text-red-500">App</div>;
+  return <DropDown />;
 };
 export default App;

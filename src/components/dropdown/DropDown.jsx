@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Input from "./Input";
+import { motion, AnimatePresence } from "framer-motion";
 import { languages } from "./dummy";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 const DropDown = () => {
@@ -28,7 +29,10 @@ const DropDown = () => {
   return (
     <section className="h-screen w-full flex justify-center mt-20">
       <div className="w-full max-w-sm p-5">
-        <div className="flex h-8  rounded-md w-full border items-center px-1 relative options  ">
+        <div
+          className="flex h-8  rounded-md w-full border items-center px-1 relative options"
+          style={{ zIndex: 100 }}
+        >
           <div ref={InputRef} className="w-full ">
             <Input selected={selected} />
           </div>
@@ -39,22 +43,29 @@ const DropDown = () => {
             }`}
             onClick={() => setClicked((prev) => !prev)}
           />
-
           {clicked && (
-            <div
-              className="absolute left-0 top-8 w-full h-auto px-0.5 
+            <AnimatePresence>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                className="absolute left-0 top-8 w-full h-auto px-0.5 
           flex flex-col gap-1 border border-t-0 shadow-md "
-            >
-              {languages.map((item, index) => (
-                <div
-                  className="bg-white px-1 py-1 cursor-pointer hover:bg-slate-100 transition-colors duration-150 ease-linear"
-                  key={index}
-                  onClick={() => handleClick(item.value)}
-                >
-                  {item.label}
-                </div>
-              ))}
-            </div>
+              >
+                {languages.map((item, index) => (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                    className="bg-white px-1 py-1 cursor-pointer hover:bg-slate-100 transition-colors duration-150 ease-linear"
+                    key={index}
+                    onClick={() => handleClick(item.value)}
+                  >
+                    {item.label}
+                  </motion.div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
           )}
         </div>
       </div>

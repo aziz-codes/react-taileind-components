@@ -6,7 +6,7 @@ const Input = ({ selected }) => {
       type="text"
       placeholder="Focus to expand items"
       value={selected}
-      className="h-full w-full rounded-md outline-none
+      className="h-full w-full rounded-md outline-none cursor-pointer
   focus:outline-none "
       readOnly
     />

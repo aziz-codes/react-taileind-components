@@ -4,7 +4,7 @@ const Input = ({ selected }) => {
   return (
     <input
       type="text"
-      placeholder={selected}
+      placeholder="Focus to expand items"
       value={selected}
       className="h-full w-full rounded-md outline-none
   focus:outline-none "

@@ -1,9 +1,9 @@
-import Heart from "./components/heart/Heart";
+import Search from "./components/search/Search";
 
 const App = () => {
   return (
     <div className="w-full flex justify-center h-screen items-center">
-      <Heart />
+      <Search />
     </div>
   );
 };
